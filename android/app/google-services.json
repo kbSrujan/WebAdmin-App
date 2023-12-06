@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "295698182170",
+    "project_id": "webadmin-e8d1a",
+    "storage_bucket": "webadmin-e8d1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295698182170:android:4bb38baa0e018cbb7561a3",
+        "android_client_info": {
+          "package_name": "com.example.webadmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-RzRQv6t25Ch1bRWhT352QjI-6X_tnGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
