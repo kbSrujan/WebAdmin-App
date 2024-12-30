@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "webadmin-e8d1a",
+    "ecom": "webadmin-e8d1a"
+  },
+  "targets": {},
+  "etags": {}
+}

@@ -1,49 +1,52 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:webadmin/Views/screens/sidescreen/widgets/banner_widget.dart';
 
 class UploadBannerScreen extends StatefulWidget {
-  static const String routeName='\UploadBanner';
+  static const String routeName = '\UploadBanner';
 
   @override
   State<UploadBannerScreen> createState() => _UploadBannerScreenState();
 }
 
 class _UploadBannerScreenState extends State<UploadBannerScreen> {
-  final FirebaseStorage _storage=FirebaseStorage.instance;
-  final FirebaseFirestore _firestore=FirebaseFirestore.instance;
+  final FirebaseStorage _storage = FirebaseStorage.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   dynamic _image;
 
   String? fileName;
 
-  bool isloading=false;
+  bool isloading = false;
 
-  pickImage() async{
-    FilePickerResult? result=await FilePicker.platform.pickFiles(allowMultiple: false,type: FileType.image);
+  pickImage() async {
+    FilePickerResult? result = await FilePicker.platform
+        .pickFiles(allowMultiple: false, type: FileType.image);
 
-    if(result!=null){
+    if (result != null) {
       setState(() {
-        _image=result.files.first.bytes;
-        fileName=result.files.first.name;
+        _image = result.files.first.bytes;
+        fileName = result.files.first.name;
       });
     }
   }
 
-  _uploadBannerToStorage(dynamic image)async{
+  _uploadBannerToStorage(dynamic image) async {
     EasyLoading.show();
-Reference  ref=  _storage.ref().child('banners').child(fileName!);
-UploadTask uploadTask=  ref.putData(image);
+    Reference ref = _storage.ref().child('banners').child(fileName!);
+    UploadTask uploadTask = ref.putData(image);
 
-TaskSnapshot snapshot= await  uploadTask;
-String downloadUrl = await snapshot.ref.getDownloadURL().whenComplete(() => EasyLoading.dismiss());
-return downloadUrl;
+    TaskSnapshot snapshot = await uploadTask;
+    String downloadUrl = await snapshot.ref
+        .getDownloadURL()
+        .whenComplete(() => EasyLoading.dismiss());
+    return downloadUrl;
   }
+
   uploadToFirebaseStore() async {
-    isloading=true;
+    isloading = true;
     try {
       if (_image != null) {
         String imageUrl = await _uploadBannerToStorage(_image);
@@ -53,18 +56,17 @@ return downloadUrl;
       }
     } catch (e) {
       setState(() {
-        _image=null;
+        _image = null;
       });
       // Handle error scenario here
       print('Error: $e');
     } finally {
       EasyLoading.dismiss();
       setState(() {
-        _image=null;
+        _image = null;
       });
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -98,15 +100,21 @@ return downloadUrl;
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Center(
-                  child: _image!=null ?Image.memory(_image,fit:BoxFit.cover,):Text("Banners"),
+                  child: _image != null
+                      ? Image.memory(
+                          _image,
+                          fit: BoxFit.cover,
+                        )
+                      : Text("Banners"),
                 ),
               ),
-                ElevatedButton(
+              ElevatedButton(
                   autofocus: true,
-                    onPressed: (){
+                  onPressed: () {
                     uploadToFirebaseStore();
-                }, child:Text("Save"),
-                style: ElevatedButton.styleFrom(primary: Colors.yellow.shade900),),
+                  },
+                  child: Text("Save"),
+                  style: ElevatedButton.styleFrom()),
             ],
           ),
           SizedBox(
@@ -115,10 +123,12 @@ return downloadUrl;
           Padding(
             padding: const EdgeInsets.only(left: 20),
             child: ElevatedButton(
-                onPressed:(){
-                  pickImage();
-              },child:Text("Upload Banners"),
-            style:ElevatedButton.styleFrom(primary: Colors.yellow.shade900),),
+              onPressed: () {
+                pickImage();
+              },
+              child: Text("Upload Banners"),
+              style: ElevatedButton.styleFrom(),
+            ),
           ),
           Divider(
             color: Colors.green,

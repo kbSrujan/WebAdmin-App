@@ -70,6 +70,7 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.webadmin',
   );
 
+
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDHMwvu4cyDYpE5r1BjGx-Y1rSDB2TSFpI',
     appId: '1:295698182170:ios:e72065c2beb5d96a7561a3',
