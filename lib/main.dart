@@ -1,10 +1,6 @@
-import 'dart:html';
-import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:webadmin/Views/screens/main_screen.dart';
 
@@ -18,19 +14,19 @@ void main() async {
   await Firebase.initializeApp(
     options: isAndroid || kIsWeb
         ? FirebaseOptions(
-        apiKey: "AIzaSyAadeXNQjnw8SOPgjHfkzu36hj2gn701ro",
-        authDomain: "webadmin-e8d1a.firebaseapp.com",
-        projectId: "webadmin-e8d1a",
-        storageBucket: "webadmin-e8d1a.appspot.com",
-        messagingSenderId: "295698182170",
-        appId: "1:295698182170:web:3f9802eaf54575537561a3"
-    )
+            apiKey: 'AIzaSyC5gAeVhXajzRJEVeE19Wsl1fEK8GiRScA',
+            appId: '1:684384820410:web:f3fda49be7820a7c1a3683',
+            messagingSenderId: '684384820410',
+            projectId: 'uberclone-d6cc2',
+            authDomain: 'uberclone-d6cc2.firebaseapp.com',
+            storageBucket: 'uberclone-d6cc2.appspot.com',
+            measurementId: 'G-N0QGSB8HZ6',
+          )
         : DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(const MyApp());
 }
-
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -45,11 +41,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainScreen(),
-      builder:EasyLoading.init(),
+      builder: EasyLoading.init(),
     );
   }
 }
-
-
-
-

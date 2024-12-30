@@ -44,39 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAadeXNQjnw8SOPgjHfkzu36hj2gn701ro',
-    appId: '1:295698182170:web:3f9802eaf54575537561a3',
-    messagingSenderId: '295698182170',
-    projectId: 'webadmin-e8d1a',
-    authDomain: 'webadmin-e8d1a.firebaseapp.com',
-    storageBucket: 'webadmin-e8d1a.appspot.com',
-    measurementId: 'G-MSSKYQTNT2',
+    apiKey: 'AIzaSyC5gAeVhXajzRJEVeE19Wsl1fEK8GiRScA',
+    appId: '1:684384820410:web:f3fda49be7820a7c1a3683',
+    messagingSenderId: '684384820410',
+    projectId: 'uberclone-d6cc2',
+    authDomain: 'uberclone-d6cc2.firebaseapp.com',
+    storageBucket: 'uberclone-d6cc2.appspot.com',
+    measurementId: 'G-N0QGSB8HZ6',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB-RzRQv6t25Ch1bRWhT352QjI-6X_tnGY',
-    appId: '1:295698182170:android:4bb38baa0e018cbb7561a3',
-    messagingSenderId: '295698182170',
-    projectId: 'webadmin-e8d1a',
-    storageBucket: 'webadmin-e8d1a.appspot.com',
+    apiKey: 'AIzaSyBBG0prWaU-YrSzxwm6epI3LkaPHlDVt6U',
+    appId: '1:684384820410:android:8d3be93a6247dabc1a3683',
+    messagingSenderId: '684384820410',
+    projectId: 'uberclone-d6cc2',
+    storageBucket: 'uberclone-d6cc2.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDHMwvu4cyDYpE5r1BjGx-Y1rSDB2TSFpI',
-    appId: '1:295698182170:ios:97e1974d217791587561a3',
-    messagingSenderId: '295698182170',
-    projectId: 'webadmin-e8d1a',
-    storageBucket: 'webadmin-e8d1a.appspot.com',
-    iosBundleId: 'com.example.webadmin',
+    apiKey: 'AIzaSyDLdsZN46K2eihprp3_QERpqRo_6yAT1Xw',
+    appId: '1:684384820410:ios:312762fb9e3005c81a3683',
+    messagingSenderId: '684384820410',
+    projectId: 'uberclone-d6cc2',
+    storageBucket: 'uberclone-d6cc2.appspot.com',
+    iosBundleId: 'com.example.uberShopApp',
   );
 
-
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDHMwvu4cyDYpE5r1BjGx-Y1rSDB2TSFpI',
-    appId: '1:295698182170:ios:e72065c2beb5d96a7561a3',
-    messagingSenderId: '295698182170',
-    projectId: 'webadmin-e8d1a',
-    storageBucket: 'webadmin-e8d1a.appspot.com',
-    iosBundleId: 'com.example.webadmin.RunnerTests',
+    apiKey: 'AIzaSyDLdsZN46K2eihprp3_QERpqRo_6yAT1Xw',
+    appId: '1:684384820410:ios:4c90defdeafac1f71a3683',
+    messagingSenderId: '684384820410',
+    projectId: 'uberclone-d6cc2',
+    storageBucket: 'uberclone-d6cc2.appspot.com',
+    iosBundleId: 'com.example.uberShopApp.RunnerTests',
   );
 }
